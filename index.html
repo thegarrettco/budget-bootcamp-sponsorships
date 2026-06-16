@@ -156,7 +156,7 @@ body {
    GRID
    ============================================================ */
 .grid-section {
-  max-width: 1240px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 48px 24px 80px;
 }
@@ -458,7 +458,6 @@ body {
     url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
   background-size: cover;
   background-position: center;
-  transform: translateY(-1px);
 }
 
 .btn-claim:active { transform: translateY(0); }
@@ -507,7 +506,11 @@ body {
 }
 
 .modal-header {
-  background: var(--navy);
+  background-image:
+    linear-gradient(rgba(13,27,46,0.82), rgba(13,27,46,0.82)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center 40%;
   padding: 28px 32px 24px;
   position: relative;
 }
@@ -525,7 +528,7 @@ body {
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #a9c19b;
   margin-bottom: 6px;
 }
 
@@ -537,7 +540,7 @@ body {
 }
 
 .modal-price {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: rgba(255,255,255,0.55);
   margin-top: 4px;
@@ -618,7 +621,7 @@ body {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--gold);
+  border-color: #a9c19b;
   background: var(--white);
 }
 
@@ -646,16 +649,28 @@ body {
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--white);
-  background: var(--navy);
+  color: var(--white);
+  background-image:
+    linear-gradient(rgba(13,27,46,0.72), rgba(13,27,46,0.72)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
   border: none;
   padding: 15px 24px;
   border-radius: var(--radius-btn);
   cursor: pointer;
-  transition: background var(--transition);
+  transition: background var(--transition), transform var(--transition);
   margin-top: 8px;
 }
 
-.form-submit:hover { background: var(--navy-mid); }
+.form-submit:hover {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.50), rgba(13,27,46,0.50)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
 
 .form-submit:disabled {
   background: var(--stone);
