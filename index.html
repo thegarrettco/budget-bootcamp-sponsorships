@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship Opportunities</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:        #B8975A;
+  --gold-light:  #D4B87A;
+  --gold-pale:   #F5EDD8;
+  --navy:        #0D1B2E;
+  --navy-mid:    #1A2D45;
+  --navy-soft:   #253A52;
+  --ink:         #0D1B2E;
+  --mist:        #F7F5F0;
+  --smoke:       #EDE9E1;
+  --stone:       #9A9285;
+  --white:       #FFFFFF;
+  --sold-bg:     #F0EEEB;
+  --sold-text:   #7A7267;
+  --radius-card: 4px;
+  --radius-btn:  3px;
+  --shadow-card: 0 2px 12px rgba(13,27,46,0.08), 0 1px 3px rgba(13,27,46,0.06);
+  --shadow-hover: 0 8px 32px rgba(13,27,46,0.14), 0 2px 8px rgba(13,27,46,0.08);
+  --transition: 0.22s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  /* Subtle linen weave pattern over the mist background */
+  background-color: var(--mist);
+  background-image: url("https://static.wixstatic.com/media/4f7dd4_63f3cd73446e43f6bf97fb94b36ae893~mv2.png");
+  background-repeat: repeat;
+}
+
+/* ============================================================
+   HERO HEADER — image with navy overlay
+   ============================================================ */
+.site-header {
+  position: relative;
+  padding: 64px 24px 56px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg");
+  background-size: cover;
+  background-position: center 40%;
+  z-index: 0;
+}
+
+/* Navy overlay — adjust opacity here (0.78 = ~78% navy, 22% image) */
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13,27,46,0.75);
+  z-index: 1;
+}
+
+/* Gold top rule sits above both layers */
+.site-header .header-rule {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+  z-index: 3;
+}
+
+.site-header .header-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.site-header .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a9c19b;
+  margin-bottom: 16px;
+}
+
+.site-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 62px);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.site-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: #ffffff;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   FILTER BAR
+   ============================================================ */
+.filter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--smoke);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.filter-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--stone);
+  background: none;
+  border: none;
+  padding: 16px 18px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filter-btn:hover { color: var(--navy); }
+.filter-btn.active { color: var(--navy); border-bottom-color: #a9c19b; }
+
+/* ============================================================
+   GRID
+   ============================================================ */
+.grid-section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--smoke);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-label .count {
+  font-weight: 400;
+  color: var(--stone);
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+.sponsorship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ============================================================
+   SPONSORSHIP CARD
+   ============================================================ */
+.card {
+  background-image: url("https://static.wixstatic.com/media/4f7dd4_5974f9062dbe44d88f84c49f655487d3~mv2.png");
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card:not(.sold-out):hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card.sold-out {
+  opacity: 0.82;
+}
+
+/* Tier accent strip */
+.card-tier-strip {
+  height: 5px;
+  background: var(--gold);
+}
+
+.card.tier-platinum .card-tier-strip { background: #A8B8C4; }
+.card.tier-gold     .card-tier-strip { background: #C9A84C; }
+.card.tier-silver   .card-tier-strip { background: #8A9BAA; }
+.card.tier-bronze   .card-tier-strip { background: #A0724A; }
+
+/* Image wrapper */
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--smoke);
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:not(.sold-out):hover .card-image img {
+  transform: scale(1.04);
+}
+
+/* Sold out overlay */
+.sold-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(13,27,46,0.55);
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.card.sold-out .sold-overlay {
+  display: flex;
+}
+
+.sold-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.7);
+  padding: 8px 20px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* Tier badge top-right */
+.tier-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold-pale);
+  border: 1px solid var(--gold);
+  padding: 4px 10px;
+  border-radius: 2px;
+  z-index: 3;
+}
+
+/* Platinum badge — cool steel */
+.card.tier-platinum .tier-badge {
+  background: #EEF2F5;
+  border-color: #7E96A8;
+  color: #1E3040;
+}
+
+/* Gold badge — warm amber (default .tier-badge handles this, but explicit for clarity) */
+.card.tier-gold .tier-badge {
+  background: var(--gold-pale);
+  border-color: var(--gold);
+  color: #3A2A0A;
+}
+
+/* Silver badge — neutral cool gray */
+.card.tier-silver .tier-badge {
+  background: #EAECEE;
+  border-color: #8A9BAA;
+  color: #2A3640;
+}
+
+/* Bronze badge — warm earth */
+.card.tier-bronze .tier-badge {
+  background: #F5EDE6;
+  border-color: #A0724A;
+  color: #4A2E15;
+}
+
+/* Date badge — top-left */
+.date-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(13,27,46,0.72);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 4px 9px;
+  border-radius: 2px;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Card body */
+.card-body {
+  padding: 22px 22px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+/* Date line under card name — for date-bearing sponsorships */
+.card-date-line {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #a9c19b;
+  margin-bottom: 8px;
+}
+
+.card-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Perks list */
+.card-perks {
+  list-style: none;
+  margin: 16px 0 0;
+}
+
+.card-perks li {
+  font-size: 12px;
+  color: var(--navy);
+  padding: 3px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-perks li::before {
+  content: '—';
+  color: #a9c19b;
+  flex-shrink: 0;
+  font-weight: 400;
+}
+
+/* Availability indicator */
+.avail-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--smoke);
+}
+
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--navy);
+  flex-shrink: 0;
+}
+
+.avail-dot.low { background: #E8A838; }
+.avail-dot.none { background: var(--stone); }
+
+.avail-text {
+  font-size: 11.5px;
+  color: var(--stone);
+  font-weight: 400;
+}
+
+/* CTA button */
+.card-footer {
+  padding: 0 22px 22px;
+}
+
+.btn-claim {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-image:
+    linear-gradient(rgba(13,27,46,0.72), rgba(13,27,46,0.72)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 13px 20px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-claim:hover {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.50), rgba(13,27,46,0.50)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  transform: translateY(-1px);
+}
+
+.btn-claim:active { transform: translateY(0); }
+
+.btn-claim.disabled {
+  background: var(--smoke);
+  color: var(--stone);
+  cursor: not-allowed;
+  transform: none;
+  letter-spacing: 1.5px;
+}
+
+/* ============================================================
+   MODAL OVERLAY
+   ============================================================ */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13,27,46,0.65);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modal-backdrop.open { display: flex; }
+
+.modal {
+  background: var(--white);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(13,27,46,0.3);
+  position: relative;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+  background: var(--navy);
+  padding: 28px 32px 24px;
+  position: relative;
+}
+
+.modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 32px; right: 32px;
+  height: 1px;
+  background: rgba(184,151,90,0.4);
+}
+
+.modal-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.modal-price {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  line-height: 1;
+}
+
+.modal-close:hover { background: rgba(255,255,255,0.2); }
+
+.modal-body {
+  padding: 28px 32px;
+}
+
+.modal-body p.note {
+  font-size: 13px;
+  color: var(--stone);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Form */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row.single { grid-template-columns: 1fr; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--mist);
+  border: 1px solid var(--smoke);
+  border-radius: var(--radius-btn);
+  padding: 10px 14px;
+  transition: border-color var(--transition);
+  outline: none;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+}
+
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.field-sponsorship-name input {
+  background: var(--gold-pale);
+  color: var(--navy);
+  font-weight: 500;
+  border-color: rgba(184,151,90,0.4);
+  cursor: default;
+}
+
+.form-divider {
+  height: 1px;
+  background: var(--smoke);
+  margin: 20px 0;
+}
+
+.form-submit {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  border: none;
+  padding: 15px 24px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background var(--transition);
+  margin-top: 8px;
+}
+
+.form-submit:hover { background: var(--navy-mid); }
+
+.form-submit:disabled {
+  background: var(--stone);
+  cursor: not-allowed;
+}
+
+/* Success state */
+.modal-success {
+  display: none;
+  padding: 48px 32px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-success.show { display: flex; }
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-pale);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.modal-success h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.modal-success p {
+  font-size: 14px;
+  color: var(--stone);
+  max-width: 360px;
+  line-height: 1.65;
+}
+
+/* Error message */
+.form-error {
+  display: none;
+  font-size: 12px;
+  color: #C0392B;
+  background: #FDEDED;
+  border: 1px solid #F0C0C0;
+  padding: 10px 14px;
+  border-radius: var(--radius-btn);
+  margin-top: 12px;
+}
+
+.form-error.show { display: block; }
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  display: none;
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--stone);
+}
+
+.empty-state p { font-size: 14px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.85), rgba(13,27,46,0.85)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 32px 24px;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .site-header { padding: 48px 20px 40px; }
+  .grid-section { padding: 32px 16px 60px; }
+  .sponsorship-grid { grid-template-columns: 1fr; gap: 18px; }
+  .form-row { grid-template-columns: 1fr; }
+  .modal-body { padding: 22px 20px; }
+  .modal-header { padding: 22px 20px 18px; }
+  .filter-bar { overflow-x: auto; justify-content: flex-start; padding: 0 16px; }
+  .filter-btn { padding: 14px 14px; }
+}
+
+@media (max-width: 480px) {
+  .modal-backdrop { padding: 12px; align-items: flex-end; }
+  .modal { border-radius: 8px 8px 0 0; max-height: 92vh; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-rule"></div>
+  <div class="header-inner">
+    <p class="eyebrow">2027 Budget Retreat · September 22–24, 2026</p>
+    <h1>Sponsorship Opportunities</h1>
+    <p>Join us this September at The Garrett Companies' Denver Headquarters for our 2027 Budget Retreat. Align your brand with an exceptional gathering of industry leaders. A limited number of exclusive partnerships are available — reserve yours before they close.</p>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<nav class="filter-bar" aria-label="Filter sponsorships">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="platinum">Platinum</button>
+  <button class="filter-btn" data-filter="gold">Gold</button>
+  <button class="filter-btn" data-filter="silver">Silver</button>
+  <button class="filter-btn" data-filter="bronze">Bronze</button>
+</nav>
+
+<!-- GRID -->
+<main class="grid-section">
+  <div class="section-label">
+    Sponsorship Packages
+    <span class="count" id="available-count">Loading...</span>
+  </div>
+
+  <div class="sponsorship-grid" id="sponsorship-grid">
+    <!-- Cards injected by JS -->
+  </div>
+
+  <div class="empty-state" id="empty-state">
+    <p>No sponsorships match the selected filter.</p>
+  </div>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <p class="modal-eyebrow">Reserve Your Sponsorship</p>
+      <h2 class="modal-title" id="modal-title">Sponsorship Name</h2>
+      <p class="modal-price" id="modal-price"></p>
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="modal-body" id="modal-form-body">
+      <p class="note">Complete the form below and our team will follow up with next steps and an invoice within one business day.</p>
+
+      <form id="checkout-form" novalidate>
+        <input type="hidden" id="field-sponsorship-id" name="sponsorship_id">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="field-first">First Name *</label>
+            <input type="text" id="field-first" name="first_name" required placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="field-last">Last Name *</label>
+            <input type="text" id="field-last" name="last_name" required placeholder="Smith">
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="field-company">Company / Organization *</label>
+            <input type="text" id="field-company" name="company" required placeholder="Acme Corp">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="field-email">Email Address *</label>
+            <input type="email" id="field-email" name="email" required placeholder="jane@acmecorp.com">
+          </div>
+          <div class="form-group">
+            <label for="field-phone">Phone Number</label>
+            <input type="tel" id="field-phone" name="phone" placeholder="(614) 555-0100">
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="field-address">Mailing Address</label>
+            <input type="text" id="field-address" name="address" placeholder="123 Main St, Columbus, OH 43215">
+          </div>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="field-notes">Additional Notes</label>
+            <textarea id="field-notes" name="notes" placeholder="Any questions, special requests, or info we should know..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-error" id="form-error">Please fill in all required fields before submitting.</div>
+        <button type="submit" class="form-submit" id="form-submit">Submit Interest &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal-success" id="modal-success">
+      <div class="success-icon">&#10003;</div>
+      <h3>Request Received</h3>
+      <p>Thank you! We'll be in touch within one business day to confirm your sponsorship and share next steps.</p>
+      <p id="success-email-note" style="font-size:12px; color: var(--gold);"></p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p style="color:#ffffff;"><i>Questions? <a href="mailto:crusk@thegarrettco.com">Get in touch</a> with the Garrett Residential team today!</i></p>
+</footer>
+
+
+<script>
+
+/* ============================================================
+   SPONSORSHIP DATA
+   date: short display string shown on card (null = no date badge)
+   dateLine: slightly longer version shown under the card title
+   ============================================================ */
+const SPONSORSHIPS = [
+  {
+    id: "platinum-view-house",
+    tier: "platinum",
+    tierLabel: "Platinum",
+    name: "Platinum Sponsor | View House",
+    date: null,
+    dateLine: "September 22nd",
+    price: "$2,500",
+    priceVal: 2500,
+    qty: 1,
+    description: "Lead the evening at View House with premier brand visibility throughout one of the conference's most memorable social experiences.",
+    perks: [
+      "Exclusive naming rights for the event night",
+      "Branded signage & prominent logo placement",
+      "Verbal recognition by event emcee",
+      "Featured in all 9/22 event communications",
+      "4 complimentary conference registrations",
+    ],
+    image: "https://static.wixstatic.com/media/4f7dd4_444c406ae0164db4b03c72629c416cd5~mv2.avif",
+  },
+  {
+    id: "platinum-pindustry",
+    tier: "platinum",
+    tierLabel: "Platinum",
+    name: "Platinum Sponsor | Pindustry",
+    date: null,
+    dateLine: "September 23rd",
+    price: "$2,500",
+    priceVal: 2500,
+    qty: 1,
+    description: "Own the night at Pindustry — an energetic, high-engagement evening event that draws the full conference crowd.",
+    perks: [
+      "Exclusive naming rights for the event night",
+      "Branded signage & prominent logo placement",
+      "Verbal recognition by event emcee",
+      "Featured in all 9/23 event communications",
+      "4 complimentary conference registrations",
+    ],
+    image: "https://static.wixstatic.com/media/4f7dd4_487d8d6fb3a7451e82d43658dd824bb9~mv2.webp",
+  },
+  {
+    id: "gold-welcome-happy-hour",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Welcome Happy Hour",
+    date: null,
+    dateLine: "September 21st",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "Make your brand the first impression. The Welcome Happy Hour kicks off the conference — your name sets the tone for the entire event.",
+    perks: [
+      "Branded bar signage & cocktail napkins",
+      "Logo on opening reception materials",
+      "Verbal recognition at welcome remarks",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&q=80",
+  },
+  {
+    id: "gold-tuesday-breakfast",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Tuesday Breakfast",
+    date: null,
+    dateLine: "September 22nd",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "Start Tuesday with your brand front-and-center. Breakfast sponsorship puts your name in front of every attendee as the day's programming begins.",
+    perks: [
+      "Branded table signage & menu cards",
+      "Logo on morning agenda materials",
+      "Verbal recognition at session open",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1528823872057-9c018a7a7553?w=800&q=80",
+  },
+  {
+    id: "gold-tuesday-lunch",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Tuesday Lunch",
+    date: null,
+    dateLine: "September 22nd",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "Midday visibility at peak attendance. Tuesday lunch is a prime networking window — your brand anchors the room during the day's most social hour.",
+    perks: [
+      "Branded table signage & napkins",
+      "Logo on afternoon session materials",
+      "Verbal recognition at lunch open",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+  },
+  {
+    id: "gold-wednesday-breakfast",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Wednesday Breakfast",
+    date: null,
+    dateLine: "September 23rd",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "Own the start of Wednesday. Your brand greets attendees as they settle in for the conference's second full day of programming.",
+    perks: [
+      "Branded table signage & menu cards",
+      "Logo on morning agenda materials",
+      "Verbal recognition at session open",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+  },
+  {
+    id: "gold-wednesday-lunch",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Wednesday Lunch",
+    date: null,
+    dateLine: "September 23rd",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "A high-energy midday moment on the conference's busiest day. Wednesday lunch draws the full attendance crowd together before the afternoon sessions.",
+    perks: [
+      "Branded table signage & napkins",
+      "Logo on afternoon session materials",
+      "Verbal recognition at lunch open",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80",
+  },
+  {
+    id: "gold-thursday-breakfast",
+    tier: "gold",
+    tierLabel: "Gold",
+    name: "Gold Sponsor | Thursday Breakfast",
+    date: null,
+    dateLine: "September 24th",
+    price: "$1,750",
+    priceVal: 1750,
+    qty: 1,
+    description: "Close out the conference on a strong note. Thursday breakfast is the final full-group gathering — a memorable last impression before attendees depart.",
+    perks: [
+      "Branded table signage & menu cards",
+      "Logo on closing day materials",
+      "Verbal recognition at final session open",
+      "3 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80",
+  },
+  {
+    id: "silver",
+    tier: "silver",
+    tierLabel: "Silver",
+    name: "Silver Sponsor",
+    date: null,
+    dateLine: "Flexible Date",
+    price: "$1,000",
+    priceVal: 1000,
+    qty: 4,
+    description: "A prominent conference-wide sponsorship with strong brand visibility across multiple touchpoints throughout all three days of programming.",
+    perks: [
+      "Logo on conference signage & materials",
+      "Recognition in opening & closing remarks",
+      "Featured in conference program",
+      "2 complimentary conference registrations",
+    ],
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+  },
+  {
+    id: "bronze",
+    tier: "bronze",
+    tierLabel: "Bronze",
+    name: "Bronze Sponsor",
+    date: null,
+    dateLine: "Flexible Date",
+    price: "$500",
+    priceVal: 500,
+    qty: 4,
+    description: "Show your support for the conference community. Bronze sponsors are recognized in the official program and on the conference website.",
+    perks: [
+      "Name & logo in conference program",
+      "Recognition on conference website",
+      "1 complimentary conference registration",
+    ],
+    image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80",
+  },
+];
+
+/* ============================================================
+   INVENTORY — localStorage as lightweight backend.
+   Swap getInventory / saveInventory / claimOne for API calls
+   when a real backend is in place.
+   ============================================================ */
+const STORAGE_KEY = "sponsorship_inventory_v2";
+
+function getInventory() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e) {}
+  const inv = {};
+  SPONSORSHIPS.forEach(s => { inv[s.id] = s.qty; });
+  saveInventory(inv);
+  return inv;
+}
+
+function saveInventory(inv) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inv)); } catch(e) {}
+}
+
+function claimOne(id) {
+  const inv = getInventory();
+  if (inv[id] > 0) {
+    inv[id] = inv[id] - 1;
+    saveInventory(inv);
+    return true;
+  }
+  return false;
+}
+
+function getRemainingForItem(id) {
+  const inv = getInventory();
+  return inv[id] !== undefined ? inv[id] : 0;
+}
+
+/* ============================================================
+   RENDER CARDS
+   ============================================================ */
+function availLabel(id, qty) {
+  const rem = getRemainingForItem(id);
+  if (rem <= 0) return { dot: 'none', text: 'Sold out' };
+  if (qty === 1) return { dot: 'green', text: '1 available' };
+  if (rem === 1) return { dot: 'low', text: 'Only 1 remaining' };
+  if (rem <= 3) return { dot: 'low', text: `${rem} remaining` };
+  if (qty < 10) return { dot: 'green', text: `${rem} of ${qty} available` };
+  return { dot: 'green', text: `${rem} spots available` };
+}
+
+function renderCards(filter = 'all') {
+  const grid = document.getElementById('sponsorship-grid');
+  const emptyState = document.getElementById('empty-state');
+  const countEl = document.getElementById('available-count');
+
+  const filtered = filter === 'all'
+    ? SPONSORSHIPS
+    : SPONSORSHIPS.filter(s => s.tier === filter);
+
+  let visibleCount = 0;
+  grid.innerHTML = '';
+
+  filtered.forEach(s => {
+    const rem = getRemainingForItem(s.id);
+    const soldOut = rem <= 0;
+    const avail = availLabel(s.id, s.qty);
+    if (!soldOut) visibleCount++;
+
+    const perksHTML = s.perks.map(p => `<li>${p}</li>`).join('');
+    const dateBadgeHTML = s.date ? `<span class="date-badge">${s.date}</span>` : '';
+    const dateLineHTML = s.dateLine ? `<p class="card-date-line">${s.dateLine}</p>` : '';
+
+    const card = document.createElement('article');
+    card.className = `card tier-${s.tier}${soldOut ? ' sold-out' : ''}`;
+    card.dataset.tier = s.tier;
+
+    card.innerHTML = `
+      <div class="card-tier-strip"></div>
+      <div class="card-image">
+        <img src="${s.image}" alt="${s.name}" loading="lazy">
+        <div class="sold-overlay"><span class="sold-badge">Sold Out</span></div>
+        <span class="tier-badge">${s.tierLabel}</span>
+        ${dateBadgeHTML}
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">${s.name}</h2>
+        ${dateLineHTML}
+        <p class="card-price">${s.price}</p>
+        <p class="card-description">${s.description}</p>
+        <ul class="card-perks">${perksHTML}</ul>
+        <div class="avail-row">
+          <div class="avail-dot ${avail.dot}"></div>
+          <span class="avail-text">${avail.text}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button
+          class="btn-claim${soldOut ? ' disabled' : ''}"
+          data-id="${s.id}"
+          data-name="${s.name}"
+          data-price="${s.price}"
+          ${soldOut ? 'disabled aria-disabled="true"' : ''}
+        >${soldOut ? 'Sold Out' : 'Reserve This Sponsorship'}</button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  if (filtered.length === 0) {
+    emptyState.style.display = 'block';
+    grid.style.display = 'none';
+  } else {
+    emptyState.style.display = 'none';
+    grid.style.display = 'grid';
+  }
+
+  const total = filter === 'all'
+    ? SPONSORSHIPS.reduce((n,s) => n + (getRemainingForItem(s.id) > 0 ? 1 : 0), 0)
+    : visibleCount;
+  countEl.textContent = `${total} available`;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+let activeItem = null;
+
+function openModal(id, name, price) {
+  activeItem = id;
+  document.getElementById('modal-title').textContent = name;
+  document.getElementById('modal-price').textContent = price;
+  document.getElementById('field-sponsorship-id').value = id;
+  document.getElementById('modal-form-body').style.display = 'block';
+  document.getElementById('modal-success').classList.remove('show');
+  document.getElementById('form-error').classList.remove('show');
+  document.getElementById('checkout-form').reset();
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('field-first').focus(), 60);
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+  activeItem = null;
+}
+
+document.getElementById('sponsorship-grid').addEventListener('click', e => {
+  const btn = e.target.closest('.btn-claim:not(.disabled)');
+  if (!btn) return;
+  openModal(btn.dataset.id, btn.dataset.name, btn.dataset.price);
+});
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+
+document.getElementById('modal-backdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-backdrop')) closeModal();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* ============================================================
+   FORM SUBMIT
+   ============================================================ */
+document.getElementById('checkout-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const errEl = document.getElementById('form-error');
+  errEl.classList.remove('show');
+
+  const req = ['field-first','field-last','field-company','field-email'];
+  const missing = req.filter(id => !document.getElementById(id).value.trim());
+  if (missing.length) {
+    errEl.textContent = 'Please fill in all required fields before submitting.';
+    errEl.classList.add('show');
+    document.getElementById(missing[0]).focus();
+    return;
+  }
+
+  const email = document.getElementById('field-email').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.classList.add('show');
+    document.getElementById('field-email').focus();
+    return;
+  }
+
+  const submitBtn = document.getElementById('form-submit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  const claimed = claimOne(activeItem);
+
+  if (!claimed) {
+    errEl.textContent = 'This sponsorship was just claimed. Please refresh and select another.';
+    errEl.classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Interest →';
+    renderCards(currentFilter);
+    return;
+  }
+
+  // ── EMAIL HOOK ────────────────────────────────────────────
+  // Replace the block below with your actual email service
+  // (Formspree, EmailJS, Make, etc.) when ready.
+  //
+  // const formData = {
+  //   sponsorship_id:   document.getElementById('field-sponsorship-id').value,
+  //   first_name:       document.getElementById('field-first').value,
+  //   last_name:        document.getElementById('field-last').value,
+  //   company:          document.getElementById('field-company').value,
+  //   email:            document.getElementById('field-email').value,
+  //   phone:            document.getElementById('field-phone').value,
+  //   address:          document.getElementById('field-address').value,
+  //   notes:            document.getElementById('field-notes').value,
+  // };
+  // await fetch('YOUR_ENDPOINT_HERE', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify(formData),
+  // });
+  // ── END EMAIL HOOK ────────────────────────────────────────
+
+  await new Promise(r => setTimeout(r, 600));
+
+  document.getElementById('modal-form-body').style.display = 'none';
+  const successEl = document.getElementById('modal-success');
+  document.getElementById('success-email-note').textContent =
+    `A confirmation will be sent to ${email}`;
+  successEl.classList.add('show');
+
+  renderCards(currentFilter);
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Submit Interest →';
+});
+
+/* ============================================================
+   FILTER BUTTONS
+   ============================================================ */
+let currentFilter = 'all';
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderCards(currentFilter);
+  });
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderCards('all');
+
+</script>
+</body>
+</html>
