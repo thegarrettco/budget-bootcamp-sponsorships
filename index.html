@@ -1316,16 +1316,16 @@ const ADMIN_PASSWORD = "garrett2027";
    4. Go to Account > API Keys, create a key, copy it
    5. Paste both values below:
    ============================================================ */
-const JSONBIN_BIN_ID  = "YOUR_BIN_ID_HERE";
-const JSONBIN_API_KEY = "YOUR_API_KEY_HERE";
-const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+const JSONBIN_BIN_ID  = "6a32e098f5f4af5e29038a51";
+const JSONBIN_API_KEY = "$2a$10$mhxB5oR2lZ5Xq4yKXaVn5.osMiIhhFVy07AV6YpWDKxJEfADGjbVe";
+const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/6a32e098f5f4af5e29038a51`;
 
 // localStorage key used as a fast local cache between API calls
 const LOCAL_CACHE_KEY = "garrett_inv_cache_v1";
 
 async function getInventory() {
   // If not yet configured, fall back to localStorage only
-  if (JSONBIN_BIN_ID === "YOUR_BIN_ID_HERE") {
+  if (JSONBIN_BIN_ID === "6a32e098f5f4af5e29038a51") {
     return getLocalInventory();
   }
   try {
@@ -1360,7 +1360,7 @@ async function saveInventory(inv) {
   // Always update local cache immediately
   localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify(inv));
 
-  if (JSONBIN_BIN_ID === "YOUR_BIN_ID_HERE") return; // not yet configured
+  if (JSONBIN_BIN_ID === "6a32e098f5f4af5e29038a51") return; // not yet configured
 
   try {
     await fetch(JSONBIN_URL, {
