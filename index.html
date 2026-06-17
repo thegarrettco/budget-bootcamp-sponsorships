@@ -1556,23 +1556,21 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
     return;
   }
 
-  // ── EMAIL HOOK ────────────────────────────────────────────
-  // const formData = {
-  //   sponsorship_id: document.getElementById('field-sponsorship-id').value,
-  //   first_name:     document.getElementById('field-first').value,
-  //   last_name:      document.getElementById('field-last').value,
-  //   company:        document.getElementById('field-company').value,
-  //   email:          document.getElementById('field-email').value,
-  //   phone:          document.getElementById('field-phone').value,
-  //   address:        document.getElementById('field-address').value,
-  //   notes:          document.getElementById('field-notes').value,
-  // };
-  // await fetch('YOUR_ENDPOINT_HERE', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(formData),
-  // });
-  // ── END EMAIL HOOK ────────────────────────────────────────
+const formData = {
+  sponsorship:  document.getElementById('field-sponsorship-id').value,
+  first_name:   document.getElementById('field-first').value,
+  last_name:    document.getElementById('field-last').value,
+  company:      document.getElementById('field-company').value,
+  email:        document.getElementById('field-email').value,
+  phone:        document.getElementById('field-phone').value,
+  address:      document.getElementById('field-address').value,
+  notes:        document.getElementById('field-notes').value,
+};
+await fetch('https://formspree.io/f/xkoaapjk', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+  body: JSON.stringify(formData),
+});
 
   await new Promise(r => setTimeout(r, 600));
 
