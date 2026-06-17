@@ -39,14 +39,13 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  /* Subtle linen weave pattern over the mist background */
   background-color: var(--mist);
   background-image: url("https://static.wixstatic.com/media/4f7dd4_63f3cd73446e43f6bf97fb94b36ae893~mv2.png");
   background-repeat: repeat;
 }
 
 /* ============================================================
-   HERO HEADER — image with navy overlay
+   HERO HEADER
    ============================================================ */
 .site-header {
   position: relative;
@@ -55,7 +54,6 @@ body {
   overflow: hidden;
 }
 
-/* Background image layer */
 .site-header::before {
   content: '';
   position: absolute;
@@ -66,7 +64,6 @@ body {
   z-index: 0;
 }
 
-/* Navy overlay — adjust opacity here (0.78 = ~78% navy, 22% image) */
 .site-header::after {
   content: '';
   position: absolute;
@@ -75,7 +72,6 @@ body {
   z-index: 1;
 }
 
-/* Gold top rule sits above both layers */
 .site-header .header-rule {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -208,22 +204,15 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-.card.sold-out {
-  opacity: 0.82;
-}
+.card.sold-out { opacity: 0.82; }
 
-/* Tier accent strip */
-.card-tier-strip {
-  height: 5px;
-  background: var(--gold);
-}
+.card-tier-strip { height: 5px; background: var(--gold); }
 
 .card.tier-platinum .card-tier-strip { background: #A8B8C4; }
 .card.tier-gold     .card-tier-strip { background: #C9A84C; }
 .card.tier-silver   .card-tier-strip { background: #8A9BAA; }
 .card.tier-bronze   .card-tier-strip { background: #A0724A; }
 
-/* Image wrapper */
 .card-image {
   width: 100%;
   aspect-ratio: 16/9;
@@ -240,11 +229,8 @@ body {
   transition: transform 0.4s ease;
 }
 
-.card:not(.sold-out):hover .card-image img {
-  transform: scale(1.04);
-}
+.card:not(.sold-out):hover .card-image img { transform: scale(1.04); }
 
-/* Sold out overlay */
 .sold-overlay {
   display: none;
   position: absolute;
@@ -255,9 +241,7 @@ body {
   z-index: 2;
 }
 
-.card.sold-out .sold-overlay {
-  display: flex;
-}
+.card.sold-out .sold-overlay { display: flex; }
 
 .sold-badge {
   font-family: 'Inter', sans-serif;
@@ -271,7 +255,6 @@ body {
   background: rgba(0,0,0,0.3);
 }
 
-/* Tier badge top-right */
 .tier-badge {
   position: absolute;
   top: 12px;
@@ -288,35 +271,11 @@ body {
   z-index: 3;
 }
 
-/* Platinum badge — cool steel */
-.card.tier-platinum .tier-badge {
-  background: #EEF2F5;
-  border-color: #7E96A8;
-  color: #1E3040;
-}
+.card.tier-platinum .tier-badge { background: #EEF2F5; border-color: #7E96A8; color: #1E3040; }
+.card.tier-gold     .tier-badge { background: var(--gold-pale); border-color: var(--gold); color: #3A2A0A; }
+.card.tier-silver   .tier-badge { background: #EAECEE; border-color: #8A9BAA; color: #2A3640; }
+.card.tier-bronze   .tier-badge { background: #F5EDE6; border-color: #A0724A; color: #4A2E15; }
 
-/* Gold badge — warm amber (default .tier-badge handles this, but explicit for clarity) */
-.card.tier-gold .tier-badge {
-  background: var(--gold-pale);
-  border-color: var(--gold);
-  color: #3A2A0A;
-}
-
-/* Silver badge — neutral cool gray */
-.card.tier-silver .tier-badge {
-  background: #EAECEE;
-  border-color: #8A9BAA;
-  color: #2A3640;
-}
-
-/* Bronze badge — warm earth */
-.card.tier-bronze .tier-badge {
-  background: #F5EDE6;
-  border-color: #A0724A;
-  color: #4A2E15;
-}
-
-/* Date badge — top-left */
 .date-badge {
   position: absolute;
   top: 12px;
@@ -335,7 +294,6 @@ body {
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* Card body */
 .card-body {
   padding: 22px 22px 18px;
   flex: 1;
@@ -352,7 +310,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* Date line under card name — for date-bearing sponsorships */
 .card-date-line {
   font-size: 11px;
   font-weight: 700;
@@ -378,11 +335,7 @@ body {
   flex: 1;
 }
 
-/* Perks list */
-.card-perks {
-  list-style: none;
-  margin: 16px 0 0;
-}
+.card-perks { list-style: none; margin: 16px 0 0; }
 
 .card-perks li {
   font-size: 12px;
@@ -400,7 +353,6 @@ body {
   font-weight: 400;
 }
 
-/* Availability indicator */
 .avail-row {
   display: flex;
   align-items: center;
@@ -418,7 +370,7 @@ body {
   flex-shrink: 0;
 }
 
-.avail-dot.low { background: #E8A838; }
+.avail-dot.low  { background: #E8A838; }
 .avail-dot.none { background: var(--stone); }
 
 .avail-text {
@@ -427,10 +379,7 @@ body {
   font-weight: 400;
 }
 
-/* CTA button */
-.card-footer {
-  padding: 0 22px 22px;
-}
+.card-footer { padding: 0 22px 22px; }
 
 .btn-claim {
   width: 100%;
@@ -567,9 +516,7 @@ body {
 
 .modal-close:hover { background: rgba(255,255,255,0.2); }
 
-.modal-body {
-  padding: 28px 32px;
-}
+.modal-body { padding: 28px 32px; }
 
 .modal-body p.note {
   font-size: 13px;
@@ -578,7 +525,6 @@ body {
   line-height: 1.6;
 }
 
-/* Form */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -627,19 +573,7 @@ body {
 
 .form-group textarea { resize: vertical; min-height: 80px; }
 
-.field-sponsorship-name input {
-  background: var(--gold-pale);
-  color: var(--navy);
-  font-weight: 500;
-  border-color: rgba(184,151,90,0.4);
-  cursor: default;
-}
-
-.form-divider {
-  height: 1px;
-  background: var(--smoke);
-  margin: 20px 0;
-}
+.form-divider { height: 1px; background: var(--smoke); margin: 20px 0; }
 
 .form-submit {
   width: 100%;
@@ -648,7 +582,6 @@ body {
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--white);
   color: var(--white);
   background-image:
     linear-gradient(rgba(13,27,46,0.72), rgba(13,27,46,0.72)),
@@ -659,7 +592,7 @@ body {
   padding: 15px 24px;
   border-radius: var(--radius-btn);
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--transition);
   margin-top: 8px;
 }
 
@@ -671,13 +604,11 @@ body {
   background-position: center;
 }
 
-
 .form-submit:disabled {
   background: var(--stone);
   cursor: not-allowed;
 }
 
-/* Success state */
 .modal-success {
   display: none;
   padding: 48px 32px;
@@ -716,7 +647,6 @@ body {
   line-height: 1.65;
 }
 
-/* Error message */
 .form-error {
   display: none;
   font-size: 12px;
@@ -747,7 +677,7 @@ body {
    ============================================================ */
 .site-footer {
   background-image:
-    linear-gradient(rgba(13,27,46,0.85), rgba(13,27,46,0.85)),
+    linear-gradient(rgba(13,27,46,0.75), rgba(13,27,46,0.75)),
     url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
   background-size: cover;
   background-position: center;
@@ -764,6 +694,289 @@ body {
   color: #ffffff !important;
   text-decoration: underline;
 }
+
+/* ============================================================
+   ADMIN PANEL — styled to match checkout modal
+   ============================================================ */
+.admin-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(13,27,46,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  z-index: 500;
+  transition: background var(--transition);
+  color: rgba(255,255,255,0.5);
+}
+.admin-trigger:hover { background: rgba(13,27,46,0.9); color: rgba(255,255,255,0.8); }
+
+.admin-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13,27,46,0.65);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.admin-backdrop.open { display: flex; }
+
+/* Matches .modal exactly */
+.admin-modal {
+  background: var(--white);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(13,27,46,0.3);
+  animation: modalIn 0.25s ease;
+}
+
+/* Matches .modal-header exactly */
+.admin-header {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.82), rgba(13,27,46,0.82)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center 40%;
+  padding: 28px 32px 24px;
+  position: relative;
+}
+
+.admin-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 32px; right: 32px;
+  height: 1px;
+  background: rgba(169,193,155,0.4);
+}
+
+.admin-header-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #a9c19b;
+  margin-bottom: 6px;
+}
+
+.admin-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0;
+}
+
+.admin-header p.admin-header-sub {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* Matches .modal-close exactly */
+.admin-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #a9c19b;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  line-height: 1;
+}
+.admin-close:hover { background: rgba(255,255,255,0.2); }
+
+/* Login screen — matches .modal-body */
+.admin-login { padding: 28px 32px; }
+
+.admin-login label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Matches form inputs exactly */
+.admin-login input {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #a9c19b;
+  border-radius: var(--radius-btn);
+  outline: none;
+  color: var(--ink);
+  background: var(--mist);
+  margin-bottom: 16px;
+  transition: border-color var(--transition);
+}
+.admin-login input:focus { border-color: #a9c19b; background: var(--white); }
+
+/* Matches .form-submit exactly */
+.admin-login-btn {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-image:
+    linear-gradient(rgba(13,27,46,0.72), rgba(13,27,46,0.72)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 15px 24px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.admin-login-btn:hover {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.50), rgba(13,27,46,0.50)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.admin-login-error {
+  font-size: 12px;
+  color: #C0392B;
+  background: #FDEDED;
+  border: 1px solid #F0C0C0;
+  padding: 10px 14px;
+  border-radius: var(--radius-btn);
+  margin-top: 10px;
+  display: none;
+}
+.admin-login-error.show { display: block; }
+
+/* Inventory panel — matches .modal-body */
+.admin-panel { padding: 28px 32px; display: none; }
+.admin-panel.show { display: block; }
+
+.admin-panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--smoke);
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--smoke);
+}
+.admin-row:last-child { border-bottom: none; }
+
+.admin-row-name {
+  flex: 1;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.admin-row-tier {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--stone);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+/* Matches form inputs */
+.admin-qty-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 58px;
+  padding: 8px 10px;
+  border: 1px solid #a9c19b;
+  border-radius: var(--radius-btn);
+  text-align: center;
+  color: var(--ink);
+  background: var(--mist);
+  outline: none;
+  flex-shrink: 0;
+  transition: border-color var(--transition), background var(--transition);
+}
+.admin-qty-input:focus { border-color: #a9c19b; background: var(--white); }
+
+/* Matches .form-submit */
+.admin-save-btn {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-image:
+    linear-gradient(rgba(13,27,46,0.72), rgba(13,27,46,0.72)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 15px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background var(--transition);
+}
+.admin-save-btn:hover {
+  background-image:
+    linear-gradient(rgba(13,27,46,0.50), rgba(13,27,46,0.50)),
+    url('https://static.wixstatic.com/media/4f7dd4_06069ad3b2754ab58d44b6b23c482e45~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.admin-saved-msg {
+  text-align: center;
+  font-size: 12px;
+  color: #2E7D32;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.admin-saved-msg.show { opacity: 1; }
 
 /* ============================================================
    RESPONSIVE
@@ -798,11 +1011,11 @@ body {
 <header class="site-header">
   <div class="header-rule"></div>
   <div class="header-inner">
-<img
-  src="https://static.wixstatic.com/shapes/4f7dd4_ccd41733c6ab4af3ade66cbd82f251b7.svg"
-  alt="The Garrett Companies"
-  style="height: 70px; width: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;"
->
+    <img
+      src="https://static.wixstatic.com/shapes/4f7dd4_ccd41733c6ab4af3ade66cbd82f251b7.svg"
+      alt="The Garrett Companies"
+      style="height: 70px; width: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;"
+    >
     <p class="eyebrow">2027 Budget Retreat · September 22–24</p>
     <h1>Sponsorship Opportunities</h1>
     <p>Join us this September at The Garrett Companies' Denver Headquarters for our 2027 Budget Retreat. Align your brand with an exceptional gathering of industry leaders. A limited number of exclusive partnerships are available — reserve yours before they close.</p>
@@ -824,11 +1037,7 @@ body {
     Sponsorship Packages
     <span class="count" id="available-count">Loading...</span>
   </div>
-
-  <div class="sponsorship-grid" id="sponsorship-grid">
-    <!-- Cards injected by JS -->
-  </div>
-
+  <div class="sponsorship-grid" id="sponsorship-grid"></div>
   <div class="empty-state" id="empty-state">
     <p>No sponsorships match the selected filter.</p>
   </div>
@@ -843,10 +1052,8 @@ body {
       <p class="modal-price" id="modal-price"></p>
       <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
     </div>
-
     <div class="modal-body" id="modal-form-body">
       <p class="note">Complete the form below and our team will follow up with next steps and an invoice within one business day.</p>
-
       <form id="checkout-form" novalidate>
         <input type="hidden" id="field-sponsorship-id" name="sponsorship_id">
         <div class="form-row">
@@ -859,14 +1066,12 @@ body {
             <input type="text" id="field-last" name="last_name" required placeholder="Smith">
           </div>
         </div>
-
         <div class="form-row single">
           <div class="form-group">
             <label for="field-company">Company / Organization *</label>
             <input type="text" id="field-company" name="company" required placeholder="Acme Corp">
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label for="field-email">Email Address *</label>
@@ -877,33 +1082,55 @@ body {
             <input type="tel" id="field-phone" name="phone" placeholder="(614) 555-0100">
           </div>
         </div>
-
         <div class="form-row single">
           <div class="form-group">
             <label for="field-address">Mailing Address</label>
             <input type="text" id="field-address" name="address" placeholder="123 Main St, Columbus, OH 43215">
           </div>
         </div>
-
         <div class="form-divider"></div>
-
         <div class="form-row single">
           <div class="form-group">
             <label for="field-notes">Additional Notes</label>
             <textarea id="field-notes" name="notes" placeholder="Any questions, special requests, or info we should know..."></textarea>
           </div>
         </div>
-
         <div class="form-error" id="form-error">Please fill in all required fields before submitting.</div>
         <button type="submit" class="form-submit" id="form-submit">Submit Interest &rarr;</button>
       </form>
     </div>
-
     <div class="modal-success" id="modal-success">
       <div class="success-icon">&#10003;</div>
       <h3>Request Received</h3>
       <p>Thank you! We'll be in touch within one business day to confirm your sponsorship and share next steps.</p>
       <p id="success-email-note" style="font-size:12px; color: var(--gold);"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN TRIGGER -->
+<button class="admin-trigger" id="admin-trigger" title="Admin">⚙</button>
+
+<!-- ADMIN MODAL -->
+<div class="admin-backdrop" id="admin-backdrop">
+  <div class="admin-modal">
+    <div class="admin-header">
+      <p class="admin-header-eyebrow">Admin Access</p>
+      <h3>Inventory Manager</h3>
+      <p class="admin-header-sub">Adjust available quantities for any sponsorship</p>
+      <button class="admin-close" id="admin-close">&times;</button>
+    </div>
+    <div class="admin-login" id="admin-login">
+      <label for="admin-password">Password</label>
+      <input type="password" id="admin-password" placeholder="Enter admin password">
+      <button class="admin-login-btn" id="admin-login-btn">Enter</button>
+      <p class="admin-login-error" id="admin-login-error">Incorrect password.</p>
+    </div>
+    <div class="admin-panel" id="admin-panel">
+      <p class="admin-panel-title">Sponsorship Inventory</p>
+      <div id="admin-rows"></div>
+      <button class="admin-save-btn" id="admin-save-btn">Save Changes</button>
+      <p class="admin-saved-msg" id="admin-saved-msg">✓ Inventory updated and live for all visitors.</p>
     </div>
   </div>
 </div>
@@ -918,20 +1145,14 @@ body {
 
 /* ============================================================
    SPONSORSHIP DATA
-   date: short display string shown on card (null = no date badge)
-   dateLine: slightly longer version shown under the card title
    ============================================================ */
 const SPONSORSHIPS = [
   {
     id: "platinum-view-house",
-    tier: "platinum",
-    tierLabel: "Platinum",
+    tier: "platinum", tierLabel: "Platinum",
     name: "Platinum Sponsor | View House",
-    date: null,
-    dateLine: "September 22nd",
-    price: "$2,500",
-    priceVal: 2500,
-    qty: 1,
+    date: null, dateLine: "September 22nd",
+    price: "$2,500", priceVal: 2500, qty: 1,
     description: "Lead the evening at View House with premier brand visibility throughout one of the conference's most memorable social experiences.",
     perks: [
       "Exclusive naming rights for the event night",
@@ -944,14 +1165,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "platinum-pindustry",
-    tier: "platinum",
-    tierLabel: "Platinum",
+    tier: "platinum", tierLabel: "Platinum",
     name: "Platinum Sponsor | Pindustry",
-    date: null,
-    dateLine: "September 23rd",
-    price: "$2,500",
-    priceVal: 2500,
-    qty: 1,
+    date: null, dateLine: "September 23rd",
+    price: "$2,500", priceVal: 2500, qty: 1,
     description: "Own the night at Pindustry — an energetic, high-engagement evening event that draws the full conference crowd.",
     perks: [
       "Exclusive naming rights for the event night",
@@ -964,14 +1181,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-welcome-happy-hour",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Welcome Happy Hour",
-    date: null,
-    dateLine: "September 21st",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 21st",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "Make your brand the first impression. The Welcome Happy Hour kicks off the conference — your name sets the tone for the entire event.",
     perks: [
       "Branded bar signage & cocktail napkins",
@@ -983,14 +1196,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-tuesday-breakfast",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Tuesday Breakfast",
-    date: null,
-    dateLine: "September 22nd",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 22nd",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "Start Tuesday with your brand front-and-center. Breakfast sponsorship puts your name in front of every attendee as the day's programming begins.",
     perks: [
       "Branded table signage & menu cards",
@@ -1002,14 +1211,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-tuesday-lunch",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Tuesday Lunch",
-    date: null,
-    dateLine: "September 22nd",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 22nd",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "Midday visibility at peak attendance. Tuesday lunch is a prime networking window — your brand anchors the room during the day's most social hour.",
     perks: [
       "Branded table signage & napkins",
@@ -1021,14 +1226,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-wednesday-breakfast",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Wednesday Breakfast",
-    date: null,
-    dateLine: "September 23rd",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 23rd",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "Own the start of Wednesday. Your brand greets attendees as they settle in for the conference's second full day of programming.",
     perks: [
       "Branded table signage & menu cards",
@@ -1040,14 +1241,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-wednesday-lunch",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Wednesday Lunch",
-    date: null,
-    dateLine: "September 23rd",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 23rd",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "A high-energy midday moment on the conference's busiest day. Wednesday lunch draws the full attendance crowd together before the afternoon sessions.",
     perks: [
       "Branded table signage & napkins",
@@ -1059,14 +1256,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "gold-thursday-breakfast",
-    tier: "gold",
-    tierLabel: "Gold",
+    tier: "gold", tierLabel: "Gold",
     name: "Gold Sponsor | Thursday Breakfast",
-    date: null,
-    dateLine: "September 24th",
-    price: "$1,750",
-    priceVal: 1750,
-    qty: 1,
+    date: null, dateLine: "September 24th",
+    price: "$1,750", priceVal: 1750, qty: 1,
     description: "Close out the conference on a strong note. Thursday breakfast is the final full-group gathering — a memorable last impression before attendees depart.",
     perks: [
       "Branded table signage & menu cards",
@@ -1078,14 +1271,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "silver",
-    tier: "silver",
-    tierLabel: "Silver",
+    tier: "silver", tierLabel: "Silver",
     name: "Silver Sponsor",
-    date: null,
-    dateLine: "Flexible Date",
-    price: "$1,000",
-    priceVal: 1000,
-    qty: 4,
+    date: null, dateLine: "Flexible Date",
+    price: "$1,000", priceVal: 1000, qty: 4,
     description: "A prominent conference-wide sponsorship with strong brand visibility across multiple touchpoints throughout all three days of programming.",
     perks: [
       "Logo on conference signage & materials",
@@ -1097,14 +1286,10 @@ const SPONSORSHIPS = [
   },
   {
     id: "bronze",
-    tier: "bronze",
-    tierLabel: "Bronze",
+    tier: "bronze", tierLabel: "Bronze",
     name: "Bronze Sponsor",
-    date: null,
-    dateLine: "Flexible Date",
-    price: "$500",
-    priceVal: 500,
-    qty: 4,
+    date: null, dateLine: "Flexible Date",
+    price: "$500", priceVal: 500, qty: 4,
     description: "Show your support for the conference community. Bronze sponsors are recognized in the official program and on the conference website.",
     perks: [
       "Name & logo in conference program",
@@ -1116,47 +1301,95 @@ const SPONSORSHIPS = [
 ];
 
 /* ============================================================
-   INVENTORY — localStorage as lightweight backend.
-   Swap getInventory / saveInventory / claimOne for API calls
-   when a real backend is in place.
+   ADMIN PASSWORD — change this to whatever you want.
    ============================================================ */
-const STORAGE_KEY = "sponsorship_inventory_v2";
+const ADMIN_PASSWORD = "garrett2027";
 
-function getInventory() {
+/* ============================================================
+   JSONBIN.IO INVENTORY BACKEND
+   ─────────────────────────────────────────────────────────────
+   HOW TO SET UP (one-time, ~2 minutes):
+   1. Go to https://jsonbin.io and create a free account
+   2. Click "Create Bin", paste this as the initial value:
+      {"platinum-view-house":1,"platinum-pindustry":1,"gold-welcome-happy-hour":1,"gold-tuesday-breakfast":1,"gold-tuesday-lunch":1,"gold-wednesday-breakfast":1,"gold-wednesday-lunch":1,"gold-thursday-breakfast":1,"silver":4,"bronze":4}
+   3. Copy the Bin ID from the URL (looks like: 64a1b2c3d4e5f6...)
+   4. Go to Account > API Keys, create a key, copy it
+   5. Paste both values below:
+   ============================================================ */
+const JSONBIN_BIN_ID  = "YOUR_BIN_ID_HERE";
+const JSONBIN_API_KEY = "YOUR_API_KEY_HERE";
+const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+
+// localStorage key used as a fast local cache between API calls
+const LOCAL_CACHE_KEY = "garrett_inv_cache_v1";
+
+async function getInventory() {
+  // If not yet configured, fall back to localStorage only
+  if (JSONBIN_BIN_ID === "YOUR_BIN_ID_HERE") {
+    return getLocalInventory();
+  }
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const res = await fetch(`${JSONBIN_URL}/latest`, {
+      headers: { "X-Master-Key": JSONBIN_API_KEY }
+    });
+    if (!res.ok) throw new Error("fetch failed");
+    const data = await res.json();
+    const inv = data.record;
+    // Cache locally so a refresh shows correct state even if API is slow
+    localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify(inv));
+    return inv;
+  } catch(e) {
+    // API unreachable — use local cache if available
+    return getLocalInventory();
+  }
+}
+
+function getLocalInventory() {
+  try {
+    const raw = localStorage.getItem(LOCAL_CACHE_KEY);
     if (raw) return JSON.parse(raw);
   } catch(e) {}
+  // First ever load — seed from SPONSORSHIPS defaults
   const inv = {};
   SPONSORSHIPS.forEach(s => { inv[s.id] = s.qty; });
-  saveInventory(inv);
+  localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify(inv));
   return inv;
 }
 
-function saveInventory(inv) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inv)); } catch(e) {}
+async function saveInventory(inv) {
+  // Always update local cache immediately
+  localStorage.setItem(LOCAL_CACHE_KEY, JSON.stringify(inv));
+
+  if (JSONBIN_BIN_ID === "YOUR_BIN_ID_HERE") return; // not yet configured
+
+  try {
+    await fetch(JSONBIN_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": JSONBIN_API_KEY
+      },
+      body: JSON.stringify(inv)
+    });
+  } catch(e) {
+    console.warn("Inventory save to jsonbin failed — local cache updated only.", e);
+  }
 }
 
-function claimOne(id) {
-  const inv = getInventory();
+async function claimOne(id) {
+  const inv = await getInventory();
   if (inv[id] > 0) {
     inv[id] = inv[id] - 1;
-    saveInventory(inv);
+    await saveInventory(inv);
     return true;
   }
   return false;
 }
 
-function getRemainingForItem(id) {
-  const inv = getInventory();
-  return inv[id] !== undefined ? inv[id] : 0;
-}
-
 /* ============================================================
    RENDER CARDS
    ============================================================ */
-function availLabel(id, qty) {
-  const rem = getRemainingForItem(id);
+function availLabel(rem, qty) {
   if (rem <= 0) return { dot: 'none', text: 'Sold out' };
   if (qty === 1) return { dot: 'green', text: '1 available' };
   if (rem === 1) return { dot: 'low', text: 'Only 1 remaining' };
@@ -1165,10 +1398,12 @@ function availLabel(id, qty) {
   return { dot: 'green', text: `${rem} spots available` };
 }
 
-function renderCards(filter = 'all') {
+async function renderCards(filter = 'all') {
   const grid = document.getElementById('sponsorship-grid');
   const emptyState = document.getElementById('empty-state');
   const countEl = document.getElementById('available-count');
+
+  const inv = await getInventory();
 
   const filtered = filter === 'all'
     ? SPONSORSHIPS
@@ -1178,9 +1413,9 @@ function renderCards(filter = 'all') {
   grid.innerHTML = '';
 
   filtered.forEach(s => {
-    const rem = getRemainingForItem(s.id);
+    const rem = inv[s.id] !== undefined ? inv[s.id] : 0;
     const soldOut = rem <= 0;
-    const avail = availLabel(s.id, s.qty);
+    const avail = availLabel(rem, s.qty);
     if (!soldOut) visibleCount++;
 
     const perksHTML = s.perks.map(p => `<li>${p}</li>`).join('');
@@ -1232,15 +1467,16 @@ function renderCards(filter = 'all') {
   }
 
   const total = filter === 'all'
-    ? SPONSORSHIPS.reduce((n,s) => n + (getRemainingForItem(s.id) > 0 ? 1 : 0), 0)
+    ? SPONSORSHIPS.reduce((n, s) => n + (inv[s.id] > 0 ? 1 : 0), 0)
     : visibleCount;
   countEl.textContent = `${total} available`;
 }
 
 /* ============================================================
-   MODAL
+   CHECKOUT MODAL
    ============================================================ */
 let activeItem = null;
+let currentFilter = 'all';
 
 function openModal(id, name, price) {
   activeItem = id;
@@ -1275,7 +1511,10 @@ document.getElementById('modal-backdrop').addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    closeModal();
+    closeAdmin();
+  }
 });
 
 /* ============================================================
@@ -1286,7 +1525,7 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
   const errEl = document.getElementById('form-error');
   errEl.classList.remove('show');
 
-  const req = ['field-first','field-last','field-company','field-email'];
+  const req = ['field-first', 'field-last', 'field-company', 'field-email'];
   const missing = req.filter(id => !document.getElementById(id).value.trim());
   if (missing.length) {
     errEl.textContent = 'Please fill in all required fields before submitting.';
@@ -1307,7 +1546,7 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
 
-  const claimed = claimOne(activeItem);
+  const claimed = await claimOne(activeItem);
 
   if (!claimed) {
     errEl.textContent = 'This sponsorship was just claimed. Please refresh and select another.';
@@ -1319,18 +1558,15 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
   }
 
   // ── EMAIL HOOK ────────────────────────────────────────────
-  // Replace the block below with your actual email service
-  // (Formspree, EmailJS, Make, etc.) when ready.
-  //
   // const formData = {
-  //   sponsorship_id:   document.getElementById('field-sponsorship-id').value,
-  //   first_name:       document.getElementById('field-first').value,
-  //   last_name:        document.getElementById('field-last').value,
-  //   company:          document.getElementById('field-company').value,
-  //   email:            document.getElementById('field-email').value,
-  //   phone:            document.getElementById('field-phone').value,
-  //   address:          document.getElementById('field-address').value,
-  //   notes:            document.getElementById('field-notes').value,
+  //   sponsorship_id: document.getElementById('field-sponsorship-id').value,
+  //   first_name:     document.getElementById('field-first').value,
+  //   last_name:      document.getElementById('field-last').value,
+  //   company:        document.getElementById('field-company').value,
+  //   email:          document.getElementById('field-email').value,
+  //   phone:          document.getElementById('field-phone').value,
+  //   address:        document.getElementById('field-address').value,
+  //   notes:          document.getElementById('field-notes').value,
   // };
   // await fetch('YOUR_ENDPOINT_HERE', {
   //   method: 'POST',
@@ -1342,10 +1578,9 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
   await new Promise(r => setTimeout(r, 600));
 
   document.getElementById('modal-form-body').style.display = 'none';
-  const successEl = document.getElementById('modal-success');
   document.getElementById('success-email-note').textContent =
     `A confirmation will be sent to ${email}`;
-  successEl.classList.add('show');
+  document.getElementById('modal-success').classList.add('show');
 
   renderCards(currentFilter);
   submitBtn.disabled = false;
@@ -1355,8 +1590,6 @@ document.getElementById('checkout-form').addEventListener('submit', async functi
 /* ============================================================
    FILTER BUTTONS
    ============================================================ */
-let currentFilter = 'all';
-
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1364,6 +1597,93 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     currentFilter = btn.dataset.filter;
     renderCards(currentFilter);
   });
+});
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+let adminUnlocked = false;
+
+function openAdmin() {
+  document.getElementById('admin-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset to login view each time unless already unlocked this session
+  if (!adminUnlocked) {
+    document.getElementById('admin-login').style.display = 'block';
+    document.getElementById('admin-panel').classList.remove('show');
+    document.getElementById('admin-password').value = '';
+    document.getElementById('admin-login-error').classList.remove('show');
+  } else {
+    populateAdminRows();
+  }
+}
+
+function closeAdmin() {
+  document.getElementById('admin-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('admin-trigger').addEventListener('click', openAdmin);
+document.getElementById('admin-close').addEventListener('click', closeAdmin);
+document.getElementById('admin-backdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('admin-backdrop')) closeAdmin();
+});
+
+// Login
+document.getElementById('admin-login-btn').addEventListener('click', () => {
+  const pw = document.getElementById('admin-password').value;
+  if (pw === ADMIN_PASSWORD) {
+    adminUnlocked = true;
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-panel').classList.add('show');
+    populateAdminRows();
+  } else {
+    document.getElementById('admin-login-error').classList.add('show');
+  }
+});
+
+document.getElementById('admin-password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('admin-login-btn').click();
+});
+
+async function populateAdminRows() {
+  const inv = await getInventory();
+  const container = document.getElementById('admin-rows');
+  container.innerHTML = '';
+
+  SPONSORSHIPS.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'admin-row';
+    const current = inv[s.id] !== undefined ? inv[s.id] : 0;
+    row.innerHTML = `
+      <div class="admin-row-name">${s.name}</div>
+      <div class="admin-row-tier">${s.tierLabel}</div>
+      <input
+        class="admin-qty-input"
+        type="number"
+        min="0"
+        max="99"
+        value="${current}"
+        data-id="${s.id}"
+      >
+    `;
+    container.appendChild(row);
+  });
+}
+
+document.getElementById('admin-save-btn').addEventListener('click', async () => {
+  const inputs = document.querySelectorAll('.admin-qty-input');
+  const inv = await getInventory();
+  inputs.forEach(input => {
+    const id = input.dataset.id;
+    const val = parseInt(input.value, 10);
+    if (!isNaN(val) && val >= 0) inv[id] = val;
+  });
+  await saveInventory(inv);
+  renderCards(currentFilter);
+  const msg = document.getElementById('admin-saved-msg');
+  msg.classList.add('show');
+  setTimeout(() => msg.classList.remove('show'), 3000);
 });
 
 /* ============================================================
